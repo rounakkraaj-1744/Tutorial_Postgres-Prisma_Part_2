@@ -2,8 +2,10 @@ import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, } from "./ui/card"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
+import { useNavigate } from "react-router-dom";
 
 export default function signup(){
+  const navigate = useNavigate();
     return(
         <Card className="w-[350px]">
         <CardHeader>
@@ -29,7 +31,7 @@ export default function signup(){
           </form>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button variant="outline" className="rounded-xl hover:bg-black hover:text-white">Log In</Button>
+          <Button variant="outline" className="rounded-xl hover:bg-black hover:text-white" onClick={()=>{navigate('/login')}}>Log In</Button>
           <Button className="bg-black text-white hover:text-black rounded-xl hover:bg-gray-100">Sign Up</Button>
         </CardFooter>
       </Card>
