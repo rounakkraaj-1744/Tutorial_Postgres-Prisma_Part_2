@@ -7,8 +7,8 @@ export default function signup(){
     return(
         <Card className="w-[350px]">
         <CardHeader>
-          <CardTitle>Sign Up</CardTitle>
-          <CardDescription>Create an account in our website</CardDescription>
+          <CardTitle>Log In</CardTitle>
+          <CardDescription>If you already have an account, log in</CardDescription>
         </CardHeader>
         <CardContent>
           <form>
