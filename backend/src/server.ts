@@ -1,16 +1,27 @@
 const express = require("express");
-const app = express();
-const cors = require ("cors");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const authRoutes = require("./routes/authRoutes");
+
 const port = process.env.PORT || 8080;
-require("dotenv").config();
+const app = express();
 
+// Middleware
+app.use(bodyParser.json());
 app.use(cors());
-app.use (express.json());
 
-app.get("/", (req, res)=>{
-    res.send("This is the homepage of the website");
+app.get("/", (req:any, res: any)=>{
+    res.send("This is the signup page of the website");
 })
 
-app.listen(port, ()=>{
-    console.log (`Server started on http://localhost:${port}`);
+app.get("/login", (req:any, res: any)=>{
+    res.send("This is the login page of the website");
 })
+
+// Routes
+app.use("/auth", authRoutes);
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server is running on port http://localhost:${port}`);
+});
